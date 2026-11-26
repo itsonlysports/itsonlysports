@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="edition">{{ site.time | date: "%A, %B %-d, %Y" }} &middot; Vol. 1</p>
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.tagline }}</p>
+</section>
+
+{% assign featured = site.posts | where: "featured", true | first %}
+{% if featured %}
+<section class="featured{% if featured.image %} has-image{% endif %}">
+  {% if featured.image %}<a class="featured-media" href="{{ featured.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ featured.image | relative_url }}" alt="{{ featured.image_alt | default: '' }}"></a>{% endif %}
+  <div class="featured-body">
+    {% if featured.published == false %}<span class="draft-pill">Draft</span>{% endif %}<span class="label">Featured take{% if featured.sport %} &middot; {{ featured.sport }}{% endif %}</span>
+    {% if featured.series %}<p class="series-label">{{ featured.series }}</p>{% endif %}
+    <h2><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h2>
+    <p>{{ featured.summary | default: featured.excerpt | strip_html | truncate: 220 }}</p>
+    <a class="read-link" href="{{ featured.url | relative_url }}">Read the column &rarr;</a>
+  </div>
+</section>
+{% endif %}
+
+<section>
+  <h2 class="section-title">Latest takes</h2>
+  {% if site.posts.size == 0 %}
+    <p>No posts yet. Check back soon.</p>
+  {% else %}
+  <div class="grid">
+    {% assign rest = site.posts | where_exp: "p", "p.featured != true" %}{% for post in rest limit: 6 %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  <p class="more"><a href="{{ '/posts/' | relative_url }}">See all posts &rarr;</a></p>
+  {% endif %}
+</section>
+
+{% include newsletter.html %}
+
+<section>
+  <h2 class="section-title">Browse by sport</h2>
+  <div class="sport-list">
+    {% for sport in site.sports %}
+      {% assign n = site.posts | where: "sport", sport | size %}
+      <a class="sport-chip" href="{{ '/sports/' | relative_url }}#{{ sport | slugify }}">{{ sport }} <span>{{ n }}</span></a>
+    {% endfor %}
+  </div>
+</section>

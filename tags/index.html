@@ -1,0 +1,19 @@
+---
+layout: default
+title: Tags
+---
+<h1>Posts by tag</h1>
+{% assign tags = site.tags | sort %}
+<div class="sport-list">
+  {% for tag in tags %}<a class="tag" href="#{{ tag[0] | slugify }}">#{{ tag[0] }}</a>{% endfor %}
+</div>
+{% for tag in tags %}
+  <section id="{{ tag[0] | slugify }}" class="sport-section">
+    <h2 class="section-title">#{{ tag[0] }}</h2>
+    <ul class="post-list">
+    {% for post in tag[1] %}
+      <li><span class="meta">{{ post.date | date: "%b %-d, %Y" }}</span> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

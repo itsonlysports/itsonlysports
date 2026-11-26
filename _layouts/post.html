@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    {% if page.sport %}<a class="sport-pill" href="{{ '/sports/' | relative_url }}#{{ page.sport | slugify }}">{{ page.sport }}</a>{% endif %}
+    {% if page.published == false %}<span class="draft-pill">Draft</span>{% endif %}
+    {% if page.series %}<a class="series-label" href="{{ '/series/' | relative_url }}#{{ page.series | slugify }}">{{ page.series }}</a>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="post-summary">{{ page.summary }}</p>{% endif %}
+    <div class="byline">
+      {% if site.author_photo and site.author_photo != "" %}<img class="avatar" src="{{ site.author_photo | relative_url }}" alt="{{ site.author }}">{% else %}{% assign aw = site.author | split: " " %}<span class="avatar">{% for w in aw limit: 2 %}{% if w != "The" %}{{ w | slice: 0 }}{% endif %}{% endfor %}</span>{% endif %}
+      <div>
+        <p class="byline-name">By {{ site.author }}</p>
+        <p class="meta">{{ site.author_role }} &middot; {{ page.date | date: "%B %-d, %Y" }} &middot; {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
+      </div>
+    </div>
+  </header>
+  {% if page.image %}
+  <figure class="post-image">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}">
+    {% if page.image_credit %}<figcaption>{{ page.image_credit | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+  {% if page.affiliate %}<p class="affiliate-note">This post contains affiliate links. If you sign up through one, I may earn a commission at no cost to you. <a href="{{ '/disclosures/' | relative_url }}">Details</a>.</p>{% endif %}
+  {% if page.dateline %}
+    {% capture dl %}<p><span class="dateline">{{ page.dateline }} &mdash;</span> {% endcapture %}
+    <div class="prose has-dateline">{{ content | replace_first: "<p>", dl }}</div>
+  {% else %}
+    <div class="prose">{{ content }}</div>
+  {% endif %}
+  {% if page.tags.size > 0 %}
+  <footer class="post-tags">
+    {% for tag in page.tags %}<a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>{% endfor %}
+  </footer>
+  {% endif %}
+  <div class="post-newsletter">{% include newsletter.html %}</div>
+  <nav class="post-nav">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% endif %}
+  </nav>
+</article>

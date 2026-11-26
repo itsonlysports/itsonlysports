@@ -1,0 +1,4 @@
+{%- comment -%} Usage: {% include money.html n=123.4 sign=true %} -> +$123 ; commas added. {%- endcomment -%}
+{%- assign _n = include.n | default: 0 -%}{%- assign _a = _n | abs | round -%}{%- assign _s = _a | append: "" -%}{%- assign _len = _s | size -%}
+{%- capture _out -%}{%- for i in (1.._len) -%}{%- assign _idx = i | minus: 1 -%}{{ _s | slice: _idx }}{%- assign _rem = _len | minus: i -%}{%- assign _m = _rem | modulo: 3 -%}{%- if _rem > 0 and _m == 0 -%},{%- endif -%}{%- endfor -%}{%- endcapture -%}
+{%- if include.sign -%}{%- if _n < 0 -%}&minus;{%- else -%}+{%- endif -%}{%- endif -%}{%- unless include.plain -%}${%- endunless -%}{{ _out }}

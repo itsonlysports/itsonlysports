@@ -1,0 +1,94 @@
+---
+layout: default
+title: Receipts
+permalink: /receipts/
+---
+{% assign rows = site.data.receipts %}
+{% assign spent = 0 %}{% assign back = 0 %}{% assign n = 0 %}{% assign pend = 0 %}{% assign best_rank = 999999999 %}{% assign best_field = 0 %}{% assign maxweek = 0 %}{% assign maxabs = 1 %}
+{% for r in rows %}
+  {% if r.week > maxweek %}{% assign maxweek = r.week %}{% endif %}
+  {% if r.pending %}{% assign pend = pend | plus: 1 %}{% else %}
+    {% assign spent = spent | plus: r.cost %}{% assign back = back | plus: r.won %}{% assign n = n | plus: 1 %}
+    {% if r.rank < best_rank %}{% assign best_rank = r.rank %}{% assign best_field = r.field %}{% endif %}
+  {% endif %}
+{% endfor %}
+{% for w in (1..maxweek) %}
+  {% assign wr = rows | where: "week", w %}{% assign wn = 0 %}
+  {% for r in wr %}{% unless r.pending %}{% assign wn = wn | plus: r.won | minus: r.cost %}{% endunless %}{% endfor %}
+  {% assign wa = wn | abs %}{% if wa > maxabs %}{% assign maxabs = wa %}{% endif %}
+{% endfor %}
+{% assign net = back | minus: spent %}
+<article class="page receipts">
+  <p class="series-label">Receipts</p>
+  <h1>2026 NFL season</h1>
+  <p class="lede">Every DraftKings contest I entered this season, week by week. Wins and losses. Most weeks lose a little. A couple of weeks win a lot. That is how tournaments work.</p>
+
+  <div class="stat-row">
+    <div class="stat"><span class="stat-label">Contests</span><span class="stat-value">{{ n }}</span></div>
+    <div class="stat"><span class="stat-label">Put in</span><span class="stat-value">{% include money.html n=spent %}</span></div>
+    <div class="stat"><span class="stat-label">Got back</span><span class="stat-value">{% include money.html n=back %}</span></div>
+    <div class="stat"><span class="stat-label">Net</span><span class="stat-value {% if net < 0 %}neg{% else %}pos{% endif %}">{% include money.html n=net sign=true %}</span></div>
+    <div class="stat"><span class="stat-label">Best finish</span><span class="stat-value">{% if best_rank == 1 %}1st{% else %}{% include money.html n=best_rank plain=true %}{% endif %}</span><span class="stat-sub">of {% include money.html n=best_field plain=true %}</span></div>
+  </div>
+
+  <h2 class="rx-h">Net by week</h2>
+  <div class="rx-chart">
+  {% for w in (1..maxweek) %}
+    {% assign wr = rows | where: "week", w %}{% assign wn = 0 %}{% assign wp = false %}
+    {% for r in wr %}{% if r.pending %}{% assign wp = true %}{% else %}{% assign wn = wn | plus: r.won | minus: r.cost %}{% endif %}{% endfor %}
+    {% assign pct = wn | abs | times: 100.0 | divided_by: maxabs %}{% if pct < 1 %}{% assign pct = 1 %}{% endif %}
+    <a class="rx-bar-row" href="#week-{{ w }}">
+      <span class="rx-wk">Wk {{ w }}</span>
+      <span class="rx-track"><span class="rx-bar {% if wn < 0 %}neg{% else %}pos{% endif %}" style="width: {{ pct | round: 1 }}%"></span></span>
+      <span class="rx-amt {% if wn < 0 %}neg{% else %}pos{% endif %}">{% include money.html n=wn sign=true %}{% if wp %}*{% endif %}</span>
+    </a>
+  {% endfor %}
+  </div>
+  {% if pend > 0 %}<p class="fine">* Week includes a contest whose result isn't recorded yet. It's left out of every total until it is.</p>{% endif %}
+
+  <h2 class="rx-h">Week by week</h2>
+  {% for i in (1..maxweek) %}
+    {% assign w = maxweek | plus: 1 | minus: i %}
+    {% assign wr = rows | where: "week", w %}
+    {% assign ws = 0 %}{% assign wb = 0 %}{% assign wc = 0 %}
+    {% for r in wr %}{% unless r.pending %}{% assign ws = ws | plus: r.cost %}{% assign wb = wb | plus: r.won %}{% assign wc = wc | plus: 1 %}{% endunless %}{% endfor %}
+    {% assign wn = wb | minus: ws %}
+    {% assign first = wr | first %}{% assign last = wr | last %}
+    <section class="rx-week" id="week-{{ w }}">
+      <header class="rx-week-head">
+        <div>
+          <h3>Week {{ w }}</h3>
+          <p class="rx-dates">{{ first.date | date: "%b %-d" }}{% if last.date != first.date %} to {{ last.date | date: "%b %-d" }}{% endif %} &middot; {{ wr.size }} contest{% if wr.size != 1 %}s{% endif %}</p>
+        </div>
+        <div class="rx-week-net">
+          <span class="rx-net {% if wn < 0 %}neg{% else %}pos{% endif %}">{% include money.html n=wn sign=true %}</span>
+          <span class="rx-inout">{% include money.html n=ws %} in &middot; {% include money.html n=wb %} back</span>
+        </div>
+      </header>
+      <div class="table-wrap">
+        <table class="receipts-table">
+          <thead><tr><th>Date</th><th>Contest</th><th class="num">In</th><th class="num">Back</th><th class="num">Net</th><th class="num">Best finish</th></tr></thead>
+          <tbody>
+          {% for r in wr %}
+            <tr>
+              <td class="nowrap">{{ r.date | date: "%a %b %-d" }}</td>
+              <td>{{ r.contest }}<span class="row-note">{{ r.format }} &middot; {{ r.entries }} entr{% if r.entries == 1 %}y{% else %}ies{% endif %}{% if r.note %} &middot; {{ r.note }}{% endif %}</span></td>
+              <td class="num">{% include money.html n=r.cost %}</td>
+              {% if r.pending %}
+              <td class="num" colspan="3"><span class="draft-pill">Result pending</span></td>
+              {% else %}
+              {% assign rn = r.won | minus: r.cost %}
+              <td class="num">{% include money.html n=r.won %}</td>
+              <td class="num {% if rn < 0 %}neg{% else %}pos{% endif %}">{% include money.html n=rn sign=true %}</td>
+              <td class="num">{% if r.rank == 1 %}<strong>1st</strong>{% else %}{% include money.html n=r.rank plain=true %}{% endif %}<span class="row-note">of {% include money.html n=r.field plain=true %}</span></td>
+              {% endif %}
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  {% endfor %}
+
+  <p class="fine">Entry fees and winnings as recorded in my own results tracker, rounded to the nearest dollar. Best finish is my best single lineup in that contest. Totals don't include the cost of tools and subscriptions. For entertainment only. 21+. Gambling problem? Call 1-800-GAMBLER.</p>
+</article>

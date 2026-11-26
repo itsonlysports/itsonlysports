@@ -1,0 +1,19 @@
+---
+layout: default
+title: Sports
+---
+<h1>Posts by sport</h1>
+<div class="sport-list">
+  {% for sport in site.sports %}<a class="sport-chip" href="#{{ sport | slugify }}">{{ sport }}</a>{% endfor %}
+</div>
+{% for sport in site.sports %}
+  {% assign posts = site.posts | where: "sport", sport %}
+  <section id="{{ sport | slugify }}" class="sport-section">
+    <h2 class="section-title">{{ sport }}</h2>
+    {% if posts.size == 0 %}
+      <p class="empty">Nothing here yet.</p>
+    {% else %}
+      <div class="grid">{% for post in posts %}{% include post-card.html post=post %}{% endfor %}</div>
+    {% endif %}
+  </section>
+{% endfor %}

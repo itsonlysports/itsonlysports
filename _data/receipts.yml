@@ -1,0 +1,488 @@
+# RECEIPTS: every DFS contest on the public record, one block per contest.
+# Source: DFS_Results_Tracker_2026.xlsx (Entry Log) plus Week 11 grading notes.
+#   week, date, sport, contest, format (Classic or Showdown), entries, cost ($ in),
+#   won ($ back), rank (best finish), field (total lineups), note (optional),
+#   pending: true = result not recorded yet (left out of totals).
+
+- week: 1
+  date: 2026-09-09
+  sport: NFL
+  contest: "Showdown $2.25M Wednesday Kickoff Millionaire [$1M to 1st]"
+  format: Showdown
+  entries: 1
+  cost: 20
+  won: 0
+  rank: 77759
+  field: 126020
+
+- week: 1
+  date: 2026-09-10
+  sport: NFL
+  contest: "Showdown $10K Huddle [Single Entry] (SF vs LAR)"
+  format: Showdown
+  entries: 1
+  cost: 5
+  won: 0
+  rank: 627
+  field: 2378
+
+- week: 1
+  date: 2026-09-10
+  sport: NFL
+  contest: "Showdown $70K Huddle [Single Entry] (SF vs LAR)"
+  format: Showdown
+  entries: 1
+  cost: 5
+  won: 0
+  rank: 7791
+  field: 16646
+
+- week: 1
+  date: 2026-09-13
+  sport: NFL
+  contest: "$200K Red Zone [$25K to 1st, Single Entry]"
+  format: Classic
+  entries: 1
+  cost: 50
+  won: 0
+  rank: 1748
+  field: 4545
+
+- week: 1
+  date: 2026-09-13
+  sport: NFL
+  contest: "$400K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 70
+  rank: 324
+  field: 158541
+
+- week: 1
+  date: 2026-09-14
+  sport: NFL
+  contest: "Showdown $75K First Down [20 Entry Max] (DEN @ KC)"
+  format: Showdown
+  entries: 20
+  cost: 20
+  won: 13.5
+  rank: 1465
+  field: 89179
+
+- week: 2
+  date: 2026-09-17
+  sport: NFL
+  contest: "Showdown $35K Bubble Screen [$10K to 1st, Single Entry]"
+  format: Showdown
+  entries: 1
+  cost: 15
+  won: 0
+  rank: 1912
+  field: 2745
+
+- week: 2
+  date: 2026-09-17
+  sport: NFL
+  contest: "Showdown $70K First Down [20 Entry Max] (DET @ BUF)"
+  format: Showdown
+  entries: 20
+  cost: 20
+  won: 9.5
+  rank: 975
+  field: 83234
+
+- week: 2
+  date: 2026-09-20
+  sport: NFL
+  contest: "$800K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 40
+  rank: 10551
+  field: 317082
+
+- week: 2
+  date: 2026-09-21
+  sport: NFL
+  contest: "Showdown $300K Play-Action [20 Entry Max] (NYG @ LAR)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 2078.08
+  rank: 1
+  field: 118906
+  note: "First place."
+
+- week: 3
+  date: 2026-09-27
+  sport: NFL
+  contest: "$750K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 88
+  rank: 676
+  field: 297265
+
+- week: 3
+  date: 2026-09-28
+  sport: NFL
+  contest: "Showdown $1.5M Monday Night Showdown [$500K to 1st] (PHI @ CHI)"
+  format: Showdown
+  entries: 1
+  cost: 20
+  won: 35
+  rank: 4188
+  field: 88235
+
+- week: 3
+  date: 2026-09-28
+  sport: NFL
+  contest: "Showdown $300K Play-Action [20 Entry Max] (PHI @ CHI)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 36
+  rank: 5344
+  field: 118906
+
+- week: 4
+  date: 2026-10-01
+  sport: NFL
+  contest: "$1.5M Thursday Night Showdown [$500K to 1st] (PIT @ CLE)"
+  format: Showdown
+  entries: 1
+  cost: 20
+  won: 0
+  rank: 47088
+  field: 88235
+
+- week: 4
+  date: 2026-10-04
+  sport: NFL
+  contest: "$700K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 37
+  rank: 6778
+  field: 277447
+
+- week: 4
+  date: 2026-10-05
+  sport: NFL
+  contest: "Showdown $300K Play-Action [20 Entry Max] (ATL @ NO)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 23
+  rank: 5524
+  field: 118906
+
+- week: 5
+  date: 2026-10-08
+  sport: NFL
+  contest: "Showdown $1.5M Thursday Night Showdown [$500K to 1st] (TB @ DAL)"
+  format: Showdown
+  entries: 1
+  cost: 20
+  won: 0
+  rank: 80619
+  field: 88235
+
+- week: 5
+  date: 2026-10-11
+  sport: NFL
+  contest: "$2.75M Fantasy Football Millionaire [$1M to 1st, $100K Leaderboard Eligible]"
+  format: Classic
+  entries: 2
+  cost: 40
+  won: 0
+  rank: 57507
+  field: 161557
+
+- week: 5
+  date: 2026-10-11
+  sport: NFL
+  contest: "$700K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 42
+  rank: 6997
+  field: 259115
+
+- week: 5
+  date: 2026-10-11
+  sport: NFL
+  contest: "Showdown $200K Play-Action [20 Entry Max] (BAL @ ATL)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 103
+  rank: 201
+  field: 79270
+
+- week: 5
+  date: 2026-10-12
+  sport: NFL
+  contest: "Showdown $1.5M Monday Night Showdown [$500K to 1st] (BUF @ LAR)"
+  format: Showdown
+  entries: 4
+  cost: 80
+  won: 0
+  rank: 20696
+  field: 88235
+
+- week: 5
+  date: 2026-10-12
+  sport: NFL
+  contest: "Showdown $300K Play-Action [20 Entry Max] (BUF @ LAR)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 11
+  rank: 10773
+  field: 118906
+
+- week: 5
+  date: 2026-10-12
+  sport: NFL
+  contest: "Showdown $80K Huddle [$10K to 1st, Single Entry] (BUF @ LAR)"
+  format: Showdown
+  entries: 1
+  cost: 5
+  won: 0
+  rank: 15260
+  field: 19024
+
+- week: 6
+  date: 2026-10-15
+  sport: NFL
+  contest: "Showdown $300K Play-Action [20 Entry Max] (SEA @ DEN)"
+  format: Showdown
+  entries: 10
+  cost: 30
+  won: 6
+  rank: 7690
+  field: 118906
+
+- week: 6
+  date: 2026-10-18
+  sport: NFL
+  contest: "$600K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 32
+  rank: 24350
+  field: 237812
+
+- week: 6
+  date: 2026-10-19
+  sport: NFL
+  contest: "Showdown $250K Play-Action [20 Entry Max] (WAS @ SF)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 56
+  rank: 1514
+  field: 99088
+
+- week: 7
+  date: 2026-10-22
+  sport: NFL
+  contest: "Showdown $250K Play-Action [20 Entry Max] (NE @ CHI)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 39
+  rank: 7413
+  field: 99088
+
+- week: 7
+  date: 2026-10-25
+  sport: NFL
+  contest: "$500K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 50
+  rank: 2156
+  field: 198176
+
+- week: 8
+  date: 2026-10-29
+  sport: NFL
+  contest: "Showdown $250K Play-Action [20 Entry Max] (CAR @ GB)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 37
+  rank: 3287
+  field: 99088
+
+- week: 8
+  date: 2026-11-01
+  sport: NFL
+  contest: "$500K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 31
+  rank: 11327
+  field: 198176
+
+- week: 8
+  date: 2026-11-01
+  sport: NFL
+  contest: "Showdown $1M Sunday Night Showdown [$250K to 1st] (PHI @ WAS)"
+  format: Showdown
+  entries: 2
+  cost: 40
+  won: 0
+  rank: 29610
+  field: 58823
+
+- week: 8
+  date: 2026-11-02
+  sport: NFL
+  contest: "Showdown $250K Play-Action [20 Entry Max] (CHI @ SEA)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 51.02
+  rank: 290
+  field: 99088
+
+- week: 9
+  date: 2026-11-05
+  sport: NFL
+  contest: "Showdown $250K Play-Action [20 Entry Max] (JAX @ BAL)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 37
+  rank: 4972
+  field: 99088
+
+- week: 9
+  date: 2026-11-08
+  sport: NFL
+  contest: "$2.5M Fantasy Football Millionaire [$1M to 1st]"
+  format: Classic
+  entries: 1
+  cost: 20
+  won: 40
+  rank: 10963
+  field: 147058
+
+- week: 9
+  date: 2026-11-08
+  sport: NFL
+  contest: "$500K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 25
+  rank: 1439
+  field: 198176
+
+- week: 9
+  date: 2026-11-08
+  sport: NFL
+  contest: "Showdown $200K Play-Action [20 Entry Max] (TB @ CHI)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 21
+  rank: 5893
+  field: 79270
+
+- week: 9
+  date: 2026-11-09
+  sport: NFL
+  contest: "Showdown $1.25M Monday Night Showdown [$300K to 1st] (BUF @ MIN)"
+  format: Showdown
+  entries: 1
+  cost: 20
+  won: 0
+  rank: 69575
+  field: 73529
+
+- week: 9
+  date: 2026-11-09
+  sport: NFL
+  contest: "Showdown $250K Play-Action [20 Entry Max] (BUF @ MIN)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 15
+  rank: 14963
+  field: 99088
+
+- week: 10
+  date: 2026-11-15
+  sport: NFL
+  contest: "$500K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 25
+  rank: 1393
+  field: 198176
+
+- week: 10
+  date: 2026-11-15
+  sport: NFL
+  contest: "Showdown $200K Play-Action [20 Entry Max] (PIT @ CIN)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 11
+  rank: 4088
+  field: 79270
+
+- week: 10
+  date: 2026-11-16
+  sport: NFL
+  contest: "Showdown $200K Play-Action [20 Entry Max] (LAC @ BAL)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  pending: true
+
+- week: 11
+  date: 2026-11-22
+  sport: NFL
+  contest: "$500K Play-Action [20 Entry Max]"
+  format: Classic
+  entries: 20
+  cost: 60
+  won: 2000
+  rank: 21
+  field: 197978
+  note: "The one lineup that held all five slate-breakers."
+
+- week: 11
+  date: 2026-11-22
+  sport: NFL
+  contest: "Showdown $200K Play-Action [20 Entry Max] (MIN vs SF)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  won: 0
+  rank: 27596
+  field: 79270
+  note: "0 for 20. SF won 35-10."
+
+- week: 11
+  date: 2026-11-23
+  sport: NFL
+  contest: "Showdown $200K Play-Action [20 Entry Max] (CIN @ WAS)"
+  format: Showdown
+  entries: 20
+  cost: 60
+  pending: true

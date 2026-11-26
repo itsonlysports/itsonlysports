@@ -1,0 +1,18 @@
+---
+layout: default
+title: Series
+permalink: /series/
+---
+<h1>Series</h1>
+{% for s in site.series %}
+  {% assign posts = site.posts | where: "series", s.name %}
+  <section id="{{ s.name | slugify }}" class="sport-section">
+    <h2 class="section-title">{{ s.name }}</h2>
+    <p class="series-about">{{ s.about }}</p>
+    {% if posts.size == 0 %}
+      <p class="empty">First one coming soon.</p>
+    {% else %}
+      <div class="grid">{% for post in posts %}{% include post-card.html post=post %}{% endfor %}</div>
+    {% endif %}
+  </section>
+{% endfor %}

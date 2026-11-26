@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------
+# Site settings. Change these to make the site yours.
+# After editing this file, the site rebuilds on its own in a minute or two.
+# ---------------------------------------------------------------
+title: "It’s Only Sports"
+tagline: "Enjoy it."
+description: "Sports and DFS through a leverage lens. Right half the time is worth something."
+author: "Low Owned"
+author_role: "Sports columnist"
+# Optional: put a square photo in assets/images and set its path, e.g. "/assets/images/author.jpg".
+# Leave empty to show your initial in a circle instead.
+author_photo: ""
+
+# The web address the site lives at. Fill this in once hosting is set up,
+# for example "https://your-username.github.io" and baseurl "/sports-blog".
+url: "https://itsonlysports.github.io"
+baseurl: "/itsonlysports"
+
+# Newsletter. Sign up free at buttondown.com, then put your Buttondown
+# username here (the part after buttondown.com/). Until then the signup box
+# shows "opening soon" instead of a working form.
+buttondown_username: ""
+newsletter_name: "The Leverage Play"
+newsletter_pitch: "One email a week, Thursday or Friday before the slate: where the field is wrong and where I'm going instead."
+
+# Post series. A post joins one by adding  series: "The Leverage Play"  to its top block.
+series:
+  - name: "The Leverage Play"
+    about: "The weekly edge: where ownership and odds don't match, and what I'm doing about it."
+  - name: "Enjoy It Monday"
+    about: "The weekend's best moments, worst beats and the stuff that reminds me why I watch."
+  - name: "Receipts"
+    about: "How my picks and lineups actually did. Wins, losses and what I learned."
+  - name: "Previews"
+    about: "Majors, playoffs and the big events, broken down before they start."
+
+# Sports listed in the top menu. Order here = order on the Sports page.
+# A post's "sport:" line should match one of these names exactly.
+sports:
+  - NFL
+  - NBA
+  - MLB
+  - NHL
+  - College
+  - Soccer
+  - Golf
+  - Fantasy
+  - Other
+
+# --- You can leave everything below alone ---
+permalink: /:year/:month/:title/
+timezone: America/Chicago          # GUESS: change to your time zone
+markdown: kramdown
+exclude:
+  - README.md
+  - HOW-TO-ADD-A-POST.md
+  - _templates
+  - screenshots
+  - Gemfile
+  - Gemfile.lock

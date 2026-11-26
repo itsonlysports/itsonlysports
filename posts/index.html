@@ -1,0 +1,19 @@
+---
+layout: default
+title: All posts
+---
+<h1>All posts</h1>
+{% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+{% for year in by_year %}
+  <h2 class="section-title">{{ year.name }}</h2>
+  <ul class="post-list">
+  {% for post in year.items %}
+    <li>
+      <span class="meta">{{ post.date | date: "%b %-d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.sport %}<span class="sport-pill small">{{ post.sport }}</span>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+{% if site.posts.size == 0 %}<p>No posts yet.</p>{% endif %}
