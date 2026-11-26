@@ -7,7 +7,6 @@ image: /assets/images/photos/golf.jpg
 image_alt: "A tree-lined fairway and bunker seen from behind a green"
 image_credit: "Photo: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:View_from_9th_green_of_West_Course.JPG), public domain ([CC0](https://creativecommons.org/publicdomain/zero/1.0/))"
 summary: "The best golfer in the world loses most weeks. That one fact makes golf the sport where thinking differently pays off the most."
-published: false
 ---
 
 Here's a fact that should change how you play fantasy golf: **the best golfer on the planet, at his absolute peak, wins maybe 15 to 20% of the time.**

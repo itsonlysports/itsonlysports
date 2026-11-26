@@ -9,7 +9,6 @@ image_alt: "Two college football teams lined up at the line of scrimmage, seen f
 image_credit: "Photo: [U.S. Navy, Johnny Bivera](https://commons.wikimedia.org/wiki/File:Football_play_from_scrimmage.jpg) via Wikimedia Commons, public domain"
 summary: "Winning a fantasy tournament isn't about having the best lineup. It's about having the lineup nobody else has when the right thing happens."
 featured: true
-published: false
 ---
 
 Every week, millions of people open DraftKings and ask the same question: who's going to score the most points?
