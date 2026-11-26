@@ -7,7 +7,6 @@ image: /assets/images/photos/snapdragon.jpg
 image_alt: "A packed college football stadium under the lights at night"
 image_credit: "Photo: [Spatms](https://commons.wikimedia.org/wiki/File:Snapdragon_Stadium_interior-Night_panorama_view_1.jpg) via Wikimedia Commons, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)"
 summary: "Football points come in bunches. The best lineups aren't nine good players. They're one game that goes crazy, captured three different ways."
-published: false
 ---
 
 Most people build a DFS lineup like they're filling out a grocery list. Best quarterback I can afford, check. Two running backs, check. Three receivers, check. Done.
